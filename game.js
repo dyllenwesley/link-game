@@ -11,7 +11,6 @@ var myheroBack;
 var myheroRight;
 
 function main(){
-    //console.log("started")//
     canvasSetup();
     windowSetup();
 
@@ -62,12 +61,10 @@ function HeroAnimate(x, y, SpriteArray) {
 function loadGraghics() {
 
     let img = new Image();
-    //This is Trent's link to his image//
     img.src = "link.png";
     img.onload = function () {
         initSprites(img);
         renderingContext.fillStyle = bluefill;
-        //linkBlink.draw(renderingContext, 30, 30);
 
         myheroLeft = new HeroAnimate(30, 30, linkBlinkLeft);
         myheroFront = new HeroAnimate(280, 30, linkBlinkFront);
@@ -96,7 +93,6 @@ function update() {
 function render() {
     //draw stuff constantly based on status
     renderingContext.fillRect(0,0, width, height);
-    //linkBlink[0].draw(renderingContext,30,30);
     myheroLeft.draw(renderingContext);
     myheroFront.draw(renderingContext);
     myheroBack.draw(renderingContext);

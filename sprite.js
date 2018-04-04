@@ -19,8 +19,6 @@ Sprite.prototype.draw = function (renderingContext, x, y) {
 
 //Set the new characters properties here//
 function initSprites(img) {
-//This image is based off of Trent's picture(used photoShop)//
-    // linkSprite = new Sprite(img, 0, 0, 90, 105);
 
     linkBlinkLeft = [
         new Sprite(img, 3, 523, 90, 100),
