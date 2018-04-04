@@ -17,14 +17,9 @@ function main(){
     windowSetup();
 
     document.getElementById("canvasbox").appendChild(canvas);
-    myhero = new HeroAnimate(30, 30);
-    myhero1 = new HeroAnimate(280, 30);
-    myhero2 = new HeroAnimate(30, 280);
-    myhero3 = new HeroAnimate(280, 280);
-
     loadGraghics();
 
-
+    
 }
 
 function windowSetup(){
@@ -41,7 +36,7 @@ function canvasSetup(){
     renderingContext = canvas.getContext("2d");
 }
 
-function HeroAnimate(x, y) {
+function HeroAnimate(x, y, SpriteArray) {
     this.x = x;
     this.y = y;
     this.frame = 0;
@@ -67,6 +62,7 @@ function HeroAnimate(x, y) {
 }
 
 function loadGraghics() {
+
     let img = new Image();
     //This is Trent's link to his image//
     img.src = "link.png";
@@ -75,9 +71,16 @@ function loadGraghics() {
         renderingContext.fillStyle = bluefill;
         //linkBlink.draw(renderingContext, 30, 30);
 
+        myhero = new HeroAnimate(30, 30, linkBlink);
+        myhero1 = new HeroAnimate(280, 30, linkBlink1);
+        myhero2 = new HeroAnimate(30, 280, linkBlink2);
+        myhero3 = new HeroAnimate(280, 280, linkBlink3);
+
         gameLoop();
     };
 }
+
+
 
 function gameLoop() {
     update();
