@@ -5,11 +5,10 @@ var renderingContext;
 var width = 600;
 var height = 500;
 var frames = 0;
-var myhero;
-var myhero1;
-var myhero2;
-var myhero3;
-
+var myheroLeft;
+var myheroFront;
+var myheroBack;
+var myheroRight;
 
 function main(){
     //console.log("started")//
@@ -18,8 +17,6 @@ function main(){
 
     document.getElementById("canvasbox").appendChild(canvas);
     loadGraghics();
-
-    
 }
 
 function windowSetup(){
@@ -54,6 +51,7 @@ function HeroAnimate(x, y, SpriteArray) {
 
     this.draw = function(renderingContext) {
         renderingContext.save();
+
         var n = this.blinkAnimation[this.frame];
         SpriteArray[n].draw(renderingContext, this.x, this.y);
 
@@ -71,16 +69,14 @@ function loadGraghics() {
         renderingContext.fillStyle = bluefill;
         //linkBlink.draw(renderingContext, 30, 30);
 
-        myhero = new HeroAnimate(30, 30, linkBlink);
-        myhero1 = new HeroAnimate(280, 30, linkBlink1);
-        myhero2 = new HeroAnimate(30, 280, linkBlink2);
-        myhero3 = new HeroAnimate(280, 280, linkBlink3);
+        myheroLeft = new HeroAnimate(30, 30, linkBlinkLeft);
+        myheroFront = new HeroAnimate(280, 30, linkBlinkFront);
+        myheroBack = new HeroAnimate(30, 280, linkBlinkBack);
+        myheroRight = new HeroAnimate(280, 280, linkBlinkRight);
 
         gameLoop();
     };
 }
-
-
 
 function gameLoop() {
     update();
@@ -91,18 +87,18 @@ function gameLoop() {
 function update() {
     //checking statuses and stuff happening
     frames++;
-    myhero.update();
-    myhero1.update();
-    myhero2.update();
-    myhero3.update();
+    myheroLeft.update();
+    myheroFront.update();
+    myheroBack.update();
+    myheroRight.update();
 }
 
 function render() {
     //draw stuff constantly based on status
     renderingContext.fillRect(0,0, width, height);
     //linkBlink[0].draw(renderingContext,30,30);
-    myhero.draw(renderingContext);
-    myhero1.draw(renderingContext);
-    myhero2.draw(renderingContext);
-    myhero3.draw(renderingContext);
+    myheroLeft.draw(renderingContext);
+    myheroFront.draw(renderingContext);
+    myheroBack.draw(renderingContext);
+    myheroRight.draw(renderingContext);
 }

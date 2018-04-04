@@ -1,8 +1,8 @@
 //add new characters here//
-let linkBlink;
-let linkBlink1;
-let linkBlink2;
-let linkBlink3;
+let linkBlinkLeft;
+let linkBlinkFront;
+let linkBlinkBack;
+let linkBlinkRight;
 
 // Base definition of sprite element (sprite constructor) //
 function Sprite(img, x, y, width, height) {
@@ -22,7 +22,7 @@ function initSprites(img) {
 //This image is based off of Trent's picture(used photoShop)//
     // linkSprite = new Sprite(img, 0, 0, 90, 105);
 
-    linkBlink = [
+    linkBlinkLeft = [
         new Sprite(img, 3, 523, 90, 100),
         new Sprite(img, 98, 523, 90, 100),
         new Sprite(img, 193, 523, 90, 100),
@@ -33,7 +33,7 @@ function initSprites(img) {
         new Sprite(img, 673, 523, 90, 100)
     ];
 
-    linkBlink1 = [
+    linkBlinkFront = [
         new Sprite(img, 3, 428, 90, 103),
         new Sprite(img, 98, 428, 90, 103),
         new Sprite(img, 193, 428, 90, 103),
@@ -44,7 +44,7 @@ function initSprites(img) {
         new Sprite(img, 673, 428, 90, 103)
     ];
 
-    linkBlink2 = [
+    linkBlinkBack = [
         new Sprite(img, 3, 626, 90, 100),
         new Sprite(img, 98, 626, 90, 100),
         new Sprite(img, 193, 626, 90, 100),
@@ -55,7 +55,7 @@ function initSprites(img) {
         new Sprite(img, 673, 626, 90, 100)
     ];
 
-    linkBlink3 = [
+    linkBlinkRight = [
         new Sprite(img, 3, 722, 90, 105),
         new Sprite(img, 98, 722, 90, 105),
         new Sprite(img, 193, 722, 90, 105),
