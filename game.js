@@ -66,10 +66,10 @@ function loadGraghics() {
         initSprites(img);
         renderingContext.fillStyle = bluefill;
 
-        myheroLeft = new HeroAnimate(30, 30, linkBlinkLeft);
-        myheroFront = new HeroAnimate(280, 30, linkBlinkFront);
-        myheroBack = new HeroAnimate(30, 280, linkBlinkBack);
-        myheroRight = new HeroAnimate(280, 280, linkBlinkRight);
+        myheroLeft = new HeroAnimate(30, 30, linkBlinkLeftView);
+        myheroFront = new HeroAnimate(280, 30, linkBlinkFrontView);
+        myheroBack = new HeroAnimate(30, 280, linkBlinkBackView);
+        myheroRight = new HeroAnimate(280, 280, linkBlinkRightView);
 
         gameLoop();
     };

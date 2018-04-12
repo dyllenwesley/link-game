@@ -1,8 +1,8 @@
 //add new characters here//
-let linkBlinkLeft;
-let linkBlinkFront;
-let linkBlinkBack;
-let linkBlinkRight;
+let linkBlinkLeftView;
+let linkBlinkFrontView;
+let linkBlinkBackView;
+let linkBlinkRightView;
 
 // Base definition of sprite element (sprite constructor) //
 function Sprite(img, x, y, width, height) {
@@ -20,7 +20,7 @@ Sprite.prototype.draw = function (renderingContext, x, y) {
 //Set the new characters properties here//
 function initSprites(img) {
 
-    linkBlinkLeft = [
+    linkBlinkLeftView = [
         new Sprite(img, 3, 523, 90, 100),
         new Sprite(img, 98, 523, 90, 100),
         new Sprite(img, 193, 523, 90, 100),
@@ -31,7 +31,7 @@ function initSprites(img) {
         new Sprite(img, 673, 523, 90, 100)
     ];
 
-    linkBlinkFront = [
+    linkBlinkFrontView = [
         new Sprite(img, 3, 428, 90, 103),
         new Sprite(img, 98, 428, 90, 103),
         new Sprite(img, 193, 428, 90, 103),
@@ -42,7 +42,7 @@ function initSprites(img) {
         new Sprite(img, 673, 428, 90, 103)
     ];
 
-    linkBlinkBack = [
+    linkBlinkBackView = [
         new Sprite(img, 3, 626, 90, 100),
         new Sprite(img, 98, 626, 90, 100),
         new Sprite(img, 193, 626, 90, 100),
@@ -53,7 +53,7 @@ function initSprites(img) {
         new Sprite(img, 673, 626, 90, 100)
     ];
 
-    linkBlinkRight = [
+    linkBlinkRightView = [
         new Sprite(img, 3, 722, 90, 105),
         new Sprite(img, 98, 722, 90, 105),
         new Sprite(img, 193, 722, 90, 105),
