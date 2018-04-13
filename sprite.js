@@ -41,14 +41,14 @@ function initSprites(img) {
     ];
 
     linkBlinkFrontView = [
-        new Sprite(img, 3, 428, 90, 103),
-        new Sprite(img, 98, 428, 90, 103),
-        new Sprite(img, 193, 428, 90, 103),
-        new Sprite(img, 288, 428, 90, 103),
-        new Sprite(img, 383, 428, 90, 103),
-        new Sprite(img, 478, 428, 90, 103),
-        new Sprite(img, 578, 428, 90, 103),
-        new Sprite(img, 673, 428, 90, 103),
+        new Sprite(img, 3, 428, 90, 100),
+        new Sprite(img, 98, 428, 90, 100),
+        new Sprite(img, 193, 428, 90, 100),
+        new Sprite(img, 288, 428, 90, 100),
+        new Sprite(img, 383, 428, 90, 100),
+        new Sprite(img, 478, 428, 90, 100),
+        new Sprite(img, 578, 428, 90, 100),
+        new Sprite(img, 673, 428, 90, 100),
         new Sprite(img, 768, 428, 90, 100),
         new Sprite(img, 863, 428, 90, 100)
     ];
