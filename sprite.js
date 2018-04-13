@@ -1,4 +1,5 @@
 //add new characters here//
+let linkStatic;
 let linkBlinkLeftView;
 let linkBlinkFrontView;
 let linkBlinkBackView;
@@ -19,6 +20,14 @@ Sprite.prototype.draw = function (renderingContext, x, y) {
 
 //Set the new characters properties here//
 function initSprites(img) {
+
+    linkStatic = [
+        new Sprite(img, 0, 0, 90, 100),
+        new Sprite(img, 98, 0, 90, 100),
+        new Sprite(img, 193, 0, 90, 100),
+        new Sprite(img, 288, 0, 90, 100)
+    ];
+
 
     linkBlinkLeftView = [
         new Sprite(img, 3, 523, 90, 100),
