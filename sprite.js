@@ -75,7 +75,7 @@ function initSprites(img) {
         new Sprite(img, 478, 722, 90, 105),
         new Sprite(img, 578, 722, 90, 105),
         new Sprite(img, 673, 722, 90, 105),
-        new Sprite(img, 768, 722, 90, 105),
+        new Sprite(img, 768, 728, 90, 105),
         new Sprite(img, 863, 722, 90, 105)
     ];
 }
