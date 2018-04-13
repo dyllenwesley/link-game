@@ -8,7 +8,6 @@ var mFrames = 0;
 var myhero;
 var currentState;
 
-
 var states = {
     Splash: 0,
     Game: 1,
@@ -25,11 +24,10 @@ function main(){
     loadGraphics();
     currentState = states.Game;
 }
+
 function windowSetup (){
     document.addEventListener("keydown", mykeypress);
     document.addEventListener("keyup", removeMotion);
-
-
 }
 
 function removeMotion(){
@@ -38,30 +36,27 @@ function removeMotion(){
 
 function mykeypress(evt){
     switch(evt.keyCode){
-
         case 32:
             myhero.jump();
             break;
-        case 65:
+        case 37:
             //move left;
             myhero.direction = "left";
 
             break;
-        case 68:
+        case 39:
             //move right;
             myhero.direction = "right";
             break;
 
-        case 83:
+        case 40:
             //move down
             myhero.direction = "down";
             break;
 
-        case 87:
+        case 38:
             myhero.direction = "up";
             break;
-
-
     }
 }
 
@@ -114,9 +109,6 @@ function Hero(){
         this.mFrames += frames % n === 0 ? 1:0;
         this.mFrames %= this.moveAnimation.length;
 
-        //this.velocity += this.gravity;
-        //this.y += this.velocity;
-
         if (currentState === states.Game){
             this.updatePlayingHero();
         }
@@ -124,7 +116,6 @@ function Hero(){
 
 
     this.updatePlayingHero = function(){
-
         if(this.direction === "left"){
             if(this.velX > -this.maxspeed){
                 this.velX --;
@@ -155,8 +146,8 @@ function Hero(){
 
         this.velX *= this.friction;
         this.x += this.velX;
-
     };
+
     this.land = function(place){
         this.y = place;
         this.jumpCount = 2;
@@ -165,29 +156,32 @@ function Hero(){
 
     this.draw = function(renderingContext){
         renderingContext.save();
+
         let n = this.blinkAnimation[this.frame];
         let m = this.moveAnimation[this.mFrames];
         let restore = renderingContext.restore();
+
         if (this.direction === "") {
             linkStatic[n].draw(renderingContext, this.x, this.y);
-            return restore;
+            restore;
+
         } if (this.direction === "up") {
             linkBlinkBackView[m].draw(renderingContext, this.x, this.y);
-            return restore;
+            restore;
+
         } if (this.direction === "right"){
             linkBlinkRightView[m].draw(renderingContext, this.x, this.y);
-            return restore;
+            restore;
+
         } if (this.direction === "down"){
             linkBlinkFrontView[m].draw(renderingContext, this.x, this.y);
-            return restore;
+            restore;
+
         } if (this.direction === "left"){
             linkBlinkLeftView[m].draw(renderingContext, this.x, this.y);
-            return restore;
+            restore;
         }
-
-
     }
-
 }
 
 function loadGraphics(){
@@ -205,11 +199,11 @@ function gameLoop(){
     update();
     render();
     window.requestAnimationFrame(gameLoop);
-    console.log("tick");
+
 }
 
 function update(){
-    frames ++;
+    frames++;
     myhero.update();
 }
 

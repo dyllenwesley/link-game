@@ -18,7 +18,6 @@ Sprite.prototype.draw = function (renderingContext, x, y) {
     renderingContext.drawImage(this.img, this.x, this.y, this.width, this.height, x, y, this.width, this.height);
 };
 
-//Set the new characters properties here//
 function initSprites(img) {
 
     linkStatic = [
@@ -28,7 +27,6 @@ function initSprites(img) {
         new Sprite(img, 288, 0, 90, 100)
     ];
 
-
     linkBlinkLeftView = [
         new Sprite(img, 3, 523, 90, 100),
         new Sprite(img, 98, 523, 90, 100),
@@ -37,7 +35,9 @@ function initSprites(img) {
         new Sprite(img, 383, 523, 90, 100),
         new Sprite(img, 478, 523, 90, 100),
         new Sprite(img, 578, 523, 90, 100),
-        new Sprite(img, 673, 523, 90, 100)
+        new Sprite(img, 673, 523, 90, 100),
+        new Sprite(img, 768, 523, 90, 100),
+        new Sprite(img, 863, 523, 90, 100)
     ];
 
     linkBlinkFrontView = [
@@ -48,7 +48,9 @@ function initSprites(img) {
         new Sprite(img, 383, 428, 90, 103),
         new Sprite(img, 478, 428, 90, 103),
         new Sprite(img, 578, 428, 90, 103),
-        new Sprite(img, 673, 428, 90, 103)
+        new Sprite(img, 673, 428, 90, 103),
+        new Sprite(img, 768, 428, 90, 100),
+        new Sprite(img, 863, 428, 90, 100)
     ];
 
     linkBlinkBackView = [
@@ -59,7 +61,9 @@ function initSprites(img) {
         new Sprite(img, 383, 626, 90, 100),
         new Sprite(img, 478, 626, 90, 100),
         new Sprite(img, 578, 626, 90, 100),
-        new Sprite(img, 673, 626, 90, 100)
+        new Sprite(img, 673, 626, 90, 100),
+        new Sprite(img, 768, 626, 90, 100),
+        new Sprite(img, 863, 626, 90, 100)
     ];
 
     linkBlinkRightView = [
@@ -70,6 +74,8 @@ function initSprites(img) {
         new Sprite(img, 383, 722, 90, 105),
         new Sprite(img, 478, 722, 90, 105),
         new Sprite(img, 578, 722, 90, 105),
-        new Sprite(img, 673, 722, 90, 105)
+        new Sprite(img, 673, 722, 90, 105),
+        new Sprite(img, 768, 722, 90, 105),
+        new Sprite(img, 863, 722, 90, 105)
     ];
 }
