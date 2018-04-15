@@ -66,8 +66,7 @@ function canvasSetup(){
 
     canvas.width = width;
     canvas.height = height;
-
-
+    
     renderingContext = canvas.getContext("2d");
 }
 
@@ -114,7 +113,6 @@ function Hero(){
         }
     };
 
-
     this.updatePlayingHero = function(){
         if(this.direction === "left"){
             if(this.velX > -this.maxspeed){
@@ -139,7 +137,6 @@ function Hero(){
                 this.velY ++;
             }
         }
-
 
         this.velY *= this.friction;
         this.y += this.velY;
