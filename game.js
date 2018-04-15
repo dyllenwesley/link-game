@@ -127,7 +127,7 @@ function Hero(){
         }
 
         if(this.direction === "up"){
-            if(this.velY < this.maxspeed){
+            if(this.velY > -this.maxspeed){
                 this.velY --;
             }
         }
