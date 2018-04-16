@@ -42,7 +42,6 @@ function mykeypress(evt){
         case 37:
             //move left;
             myhero.direction = "left";
-
             break;
         case 39:
             //move right;
@@ -53,7 +52,6 @@ function mykeypress(evt){
             //move down
             myhero.direction = "down";
             break;
-
         case 38:
             myhero.direction = "up";
             break;
