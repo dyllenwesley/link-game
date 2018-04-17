@@ -26,35 +26,50 @@ function main(){
 }
 
 function windowSetup (){
-    document.addEventListener("keydown", mykeypress);
-    document.addEventListener("keyup", removeMotion);
+    let wasd = new controls('wasd');
+    wasd.addKeys({'w':'up', 'a':'left', 's':'down', 'd':'right'});
+    //let udlr = new contorls();
 }
 
 function removeMotion(){
     myhero.direction = "";
 }
-
-function mykeypress(evt){
-    switch(evt.keyCode){
-        case 32:
-            myhero.jump();
-            break;
-        case 37:
-            //move left;
-            myhero.direction = "left";
-            break;
-        case 39:
-            //move right;
-            myhero.direction = "right";
-            break;
-
-        case 40:
-            //move down
-            myhero.direction = "down";
-            break;
-        case 38:
-            myhero.direction = "up";
-            break;
+class controls {
+    constructor(name){
+        this.name = name;
+        //add your key actions inside actions array
+        this.actions = {
+            'up':this.up,
+            'down':this.down,
+            'left':this.left,
+            'right':this.right
+        };
+    }
+    addKey(key, action){
+        let keyCode = key.toUpperCase().charCodeAt(0);
+        let cons = this;
+        document.addEventListener('keydown', function(e){
+            let keyPressed = e.keyCode;
+            if (keyPressed === keyCode){
+                cons.actions[action] = true;
+                console.log(key + ':' + cons.actions[action]);
+            }
+        });
+        document.addEventListener('keyup', function(e){
+            let keyPressed = e.keyCode;
+            if (keyPressed === keyCode){
+                cons.actions[action] = false;
+                console.log(key + ':' + cons.actions[action]);
+            }
+        });
+    }
+    addKeys(keysArray){
+        let cObj = this;
+        console.log(keysArray);
+        for (var item in keysArray) {
+            console.log(item + ':' + keysArray[item]);
+            cObj.addKey(item, keysArray[item]);
+        }
     }
 }
 
